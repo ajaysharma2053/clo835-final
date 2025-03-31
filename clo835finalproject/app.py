@@ -21,7 +21,7 @@ S3_BUCKET_NAME = os.environ.get("S3_BUCKET_NAME")
 S3_OBJECT_KEY = os.environ.get("S3_OBJECT_KEY")
 
 # Read name to display from env var
-MY_NAME = os.environ.get("MY_NAME", "Reh")
+MY_NAME = os.environ.get("MY_NAME", "Ajay")
 
 # Download image from S3 and copy to static
 def download_background_image():
