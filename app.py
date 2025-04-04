@@ -8,7 +8,7 @@ import shutil
 
 app = Flask(__name__)
 
-# Read MySQL DB config from env vars or default
+# Read MySQL DB config from env vars or default test
 DBHOST = os.environ.get("DBHOST", "localhost")
 DBUSER = os.environ.get("DBUSER", "root")
 DBPWD = os.environ.get("DBPWD", "password")
