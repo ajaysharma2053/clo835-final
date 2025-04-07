@@ -1,3 +1,47 @@
+RUNNING IT LOCALLY OR IN CLOUD9
+
+-----------------------------------------------
+#Building Images
+
+docker build -t flask-app -f Dockerfile .
+docker build -t mysql-db -f Dockerfile_mysql .
+
+----------------------------------------------
+#Creating Network
+
+docker network create clo835-net
+
+--------------------------------------
+#Running MySQL image container
+
+docker run --name mysql-db \
+  --network clo835-net \
+  -e MYSQL_ROOT_PASSWORD=pw \
+  -p 3307:3306 \
+  -d mysql-db
+  
+  
+-----------------------------------
+#Running App image container
+
+docker run --name flask-app \
+  --network clo835-net \
+  -p 8080:81 \
+  -e DBHOST=mysql-db \
+  -e DBPORT=3306 \
+  -e DBUSER=root \
+  -e DBPWD=pw \
+  -e DATABASE=employees \
+  -e S3_BUCKET_NAME=clo835-background-imgs \
+  -e S3_OBJECT_KEY=bg.jpg \
+  -e MY_NAME="Salisha-Pratima-Ajay" \
+  -v ~/.aws:/root/.aws \
+  flask-app
+--------------------------------------
+
+
+ADDITONAL INSFORMATION
+
 # Install the required MySQL package
 
 sudo apt-get update -y
