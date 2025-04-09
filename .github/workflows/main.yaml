@@ -44,7 +44,7 @@ jobs:
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG_APP -f Dockerfile .
         sleep 10
 
-        # Create a custom Docker network
+        # Create a custom Docker network tst
         docker network create flask-network
 
     - name: Run SQL Container
