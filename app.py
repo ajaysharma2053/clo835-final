@@ -40,7 +40,7 @@ def download_background_image():
 # Trigger image download at app startup
 download_background_image()
 
-# MySQL connection
+# MySQL connection test
 db_conn = connections.Connection(
     host=DBHOST,
     port=DBPORT,
