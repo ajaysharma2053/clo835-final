@@ -37,7 +37,7 @@ def download_background_image():
     except Exception as e:
         print(f"Error downloading background image: {e}")
 
-# Trigger image download at app startup
+# Trigger image download at app startup test
 download_background_image()
 
 # MySQL connection test
